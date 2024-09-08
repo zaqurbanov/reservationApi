@@ -1,0 +1,8 @@
+2024-09-08 17:20:42 [32minfo[39m: login success true {
+  _id: new ObjectId('66dd6f09769eb188d5adfbb8'),
+  username: 'admin',
+  email: 'admin@gmail.com',
+  password: '$2b$10$JQGC.1EKGT5vNDVjYoPrfum1RjVpqwUHuYtDkZe.rAyun6f7PepfS',
+  role: 'admin',
+  __v: 0
+}

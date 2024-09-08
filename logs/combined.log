@@ -1,0 +1,14 @@
+2024-09-08 17:14:00 [31merror[39m: undefined
+2024-09-08 17:15:01 [31merror[39m: User Not Found
+2024-09-08 17:15:29 [32minfo[39m: User Not Found
+2024-09-08 17:15:40 [31merror[39m: undefined
+2024-09-08 17:15:54 [31merror[39m: User Not Found
+2024-09-08 17:16:49 [32minfo[39m: login success true
+2024-09-08 17:17:14 [32minfo[39m: login success true {
+  _id: new ObjectId('66dd6f09769eb188d5adfbb8'),
+  username: 'admin',
+  email: 'admin@gmail.com',
+  password: '$2b$10$JQGC.1EKGT5vNDVjYoPrfum1RjVpqwUHuYtDkZe.rAyun6f7PepfS',
+  role: 'admin',
+  __v: 0
+}

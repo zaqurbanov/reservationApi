@@ -1,0 +1,34 @@
+{
+    "success": true,
+    "statusCode": 200,
+    "message": "Data successfully",
+    "totalPage": 1,
+    "page": 1,
+    "data_size": 3,
+    "data": [
+        {
+            "_id": "66dd6f83fe9bee7ca168f5b6",
+            "name": "venuesAbsero22n",
+            "location": "Abseron",
+            "capacity": "540",
+            "description": "venues description 22",
+            "__v": 0
+        },
+        {
+            "_id": "66dd70bc0b203c6e8a7b02e6",
+            "name": "venuesBaku",
+            "location": "Baku",
+            "capacity": "540",
+            "description": "venues description 22",
+            "__v": 0
+        },
+        {
+            "_id": "66dd70ce0b203c6e8a7b02e9",
+            "name": "venuesAbseron",
+            "location": "Abseron",
+            "capacity": "540",
+            "description": "venues description 22",
+            "__v": 0
+        }
+    ]
+}
