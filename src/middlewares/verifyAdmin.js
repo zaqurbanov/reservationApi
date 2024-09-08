@@ -1,5 +1,6 @@
 
 const Response = require("../config/response");
+const logger = require("../logger/logger");
 
 
  const verifyAdmin = async (req, res, next) => {
@@ -7,6 +8,7 @@ const Response = require("../config/response");
 
         
     if (req.user.role !== 'admin') {
+      logger.error("Access denied. Admins only.")
         return res.status(403).json({
 
           message:"Access denied. Admins only."

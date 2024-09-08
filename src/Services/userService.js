@@ -40,7 +40,7 @@ const registerUser = async(username,password,email)=>{
             const hashPassword = await bcrypt.hash(password,10)
 
             const result  = await UserModel.create({username,password:hashPassword,email})
-
+                logger.info(result + "success created")
             return Response.success("User created Successfully",result,HTTP_CODE.success.ok)
         } catch (error) {
             return getCatchError(error.message)

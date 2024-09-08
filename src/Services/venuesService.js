@@ -22,7 +22,7 @@ const createVenuses =async (name,location,capacity,description)=>{
                 description              
             })
 
-
+            logger.info("Success created "+result  )
             return Response.success(messages.post.success,result,HTTP_CODE.success.ok)
         } catch (error) {
             
@@ -39,6 +39,7 @@ const getAllVenues = async(page,limit,skip,location)=>{
 
         const totalPages = Math.ceil(totalRecords / limit);
             const result = await VenuesModel.find(query).limit(limit).skip(skip)
+            
             return Response.success(messages.get.success, result, HTTP_CODE.success.ok, totalPages, page, {
                 totalRecords,
                 currentPage: page,
@@ -55,7 +56,7 @@ const getVenuesById = async(id)=>{
             const result  = await VenuesModel.findById(id)
             if(!result)
                 return Response.error(messages.get.error,null,HTTP_CODE.client_error.not_found)
-
+            logger.info("success")
             return Response.success(messages.get.success,result,HTTP_CODE.success.ok)
     } catch (error) {
         return getCatchError(error.message)
@@ -84,7 +85,7 @@ const updateVenuesById = async(data,id)=>{
 
 
         const result  = await VenuesModel.findByIdAndUpdate(id,{...data},{new:true})
-
+        logger.info("updatedsuccessfully " + result)
         return Response.success(messages.updated.success,result,HTTP_CODE.success.ok)
 
         
@@ -101,8 +102,10 @@ const deleteVenuesById = async(id)=>{
         const data  = await VenuesModel.findById(id)
         if(!data)
             return Response.error(messages.get.error,null,HTTP_CODE.client_error.not_found)
-
+            
          await VenuesModel.findByIdAndDelete(id)
+
+         logger.info("deleted Successfully")
         return Response.success(messages.delete.success,null,HTTP_CODE.success.ok)
             
     } catch (error) {

@@ -2,6 +2,7 @@ const HTTP_CODE = require("../config/HTTP_CODE")
 const messages = require("../config/messages")
 const Response = require("../config/response")
 const getCatchError = require("../helpers/catchError")
+const logger = require("../logger/logger")
 const ReservationModel = require("../Models/ReservationModel")
 const VenuesModel = require("../Models/VenuesModel")
 
@@ -34,7 +35,7 @@ const createReservation = async (venueId,date,time,numberOfPeople,userId)=>{
             numberOfPeople,
             userId
         }) 
-        
+            logger.info("reservation Created")
         return Response.success(messages.post.success,result, HTTP_CODE.success.ok)
 
     } catch (error) {
@@ -48,7 +49,7 @@ const getReservationByUserId = async(userId)=>{
 
             if(result.length<1)
                 return Response.error("Reservation Not Found",null,HTTP_CODE.client_error.not_found)
-
+            logger.info("success")
             return Response.success(messages.get.success,result,HTTP_CODE.success.ok)
         } catch (error) {
             
@@ -67,6 +68,7 @@ const getReservationDetailById = async(id,userId,userRole)=>{
             if(reservation.userId.toString() !== userId.toString() && userRole !=="admin" )
                 return Response.error("Access denied. Only the creator or admin can view this reservation.",null,HTTP_CODE.client_error.forbidden)
 
+            logger.info(reservation)
                 return Response.success(messages.get.success,reservation,HTTP_CODE.success.ok)
 
 
@@ -88,7 +90,7 @@ const deleteReservationById = async(id,userId,userRole)=>{
                 return Response.error("Access denied. Only the creator or admin can view this reservation.",null,HTTP_CODE.client_error.forbidden)
 
             await ReservationModel.findByIdAndDelete(id)
-
+                logger.info("deleted Successfully")
             return Response.success(messages.delete.success,null,HTTP_CODE.success.ok)
     } catch (error) {
         return getCatchError(error.message)

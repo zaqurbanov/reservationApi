@@ -16,6 +16,7 @@ const logFormat = printf(({ level, message, timestamp }) => {
       new transports.Console(),
       new transports.File({ filename: path.join( __dirname ,'logs/error.log'), level: 'error' }),  
       new transports.File({ filename: path.join(__dirname, 'logs/info.log'  ) , level: 'info' }),  
+      new transports.File({ filename: path.join(__dirname, 'logs/warning.log'  ) , level: 'warning' }),
       new transports.File({ filename: path.join(__dirname,'logs/combined.log')  }) ,
 
     ]

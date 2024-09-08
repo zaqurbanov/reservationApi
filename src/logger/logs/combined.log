@@ -6,3 +6,7 @@
   role: 'admin',
   __v: 0
 }
+2024-09-08 18:26:42 [31merror[39m: logger.warning is not a function
+2024-09-08 18:26:42 [31merror[39m: logger.warning is not a function
+2024-09-08 18:26:59 [31merror[39m: logger.warning is not a function
+2024-09-08 18:26:59 [31merror[39m: logger.warning is not a function

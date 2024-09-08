@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const logger = require('../logger/logger');
 
 class Mongo{
 
@@ -12,7 +13,7 @@ class Mongo{
 
                 console.log("Connected !!!");
         } catch (error) {
-           
+            logger.error(error.message)
             console.log("Connected Failed");
                 console.log(error.message);
         }
